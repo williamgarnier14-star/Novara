@@ -1,147 +1,11 @@
-import { useEffect, useRef, useState } from 'react'
-import {
-  ArrowUpRight, Check, ChevronDown, LifeBuoy, LoaderCircle, Menu, Palette, Play, Star, Wallet, X, Zap,
-} from 'lucide-react'
-import {
-  CALENDLY, NAV, STATS, PROFILES, KEY_FACTS, WHY, STEPS, PLANS, PROJECTS, FAQ,
-} from './content.js'
-import projectThumb from './assets/emilie-project-thumb.jpg'
+import { useEffect, useState } from 'react'
+import { ArrowRight, ArrowUpRight, Bot, Check, ChevronDown, Globe, LifeBuoy, LoaderCircle, Palette, Play, Star, Wallet, X, Zap } from 'lucide-react'
+import { STATS, PROFILES, KEY_FACTS, WHY, STEPS, PLANS, PROJECTS, FAQ, SERVICES } from '../content.js'
+import { Shell, SectionHead, Stars, inputCls } from '../components/ui.jsx'
+import { ProjetWebForm, pickFormule } from '../components/Forms.jsx'
+import projectThumb from '../assets/emilie-project-thumb.jpg'
 
 const ICONS = { zap: Zap, palette: Palette, wallet: Wallet, lifebuoy: LifeBuoy }
-
-function Background() {
-  return (
-    <div className="pointer-events-none fixed inset-0 z-0" aria-hidden="true">
-      <div className="absolute inset-0 bg-navy-950" />
-      <div
-        className="animate-breathe absolute h-[900px] w-[900px] rounded-full blur-[120px]"
-        style={{ top: '-200px', right: '-200px', background: 'radial-gradient(circle, rgba(59,108,224,0.18) 0%, transparent 70%)' }}
-      />
-      <div
-        className="animate-breathe absolute h-[600px] w-[600px] rounded-full blur-[100px]"
-        style={{ bottom: '-150px', left: '-100px', background: 'radial-gradient(circle, rgba(110,143,232,0.10) 0%, transparent 70%)', animationDelay: '2s' }}
-      />
-      <div
-        className="absolute inset-0"
-        style={{
-          backgroundImage: 'linear-gradient(rgba(255,255,255,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.07) 1px, transparent 1px)',
-          backgroundSize: '40px 40px',
-        }}
-      />
-    </div>
-  )
-}
-
-const FADE = '.fade-up, .fade-up-1, .fade-up-2, .fade-up-3, .fade-up-4'
-function RevealOnScroll() {
-  useEffect(() => {
-    document.documentElement.classList.remove('no-js')
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) {
-            e.target.classList.add('in-view')
-            io.unobserve(e.target)
-          }
-        })
-      },
-      { threshold: 0.15, rootMargin: '0px 0px -8% 0px' },
-    )
-    document.querySelectorAll(FADE).forEach((el) => io.observe(el))
-    return () => io.disconnect()
-  }, [])
-  return null
-}
-
-function ScrollProgress() {
-  const bar = useRef(null)
-  useEffect(() => {
-    function update() {
-      const max = document.documentElement.scrollHeight - window.innerHeight
-      const pct = max > 0 ? (window.scrollY / max) * 100 : 0
-      if (bar.current) bar.current.style.width = `${pct}%`
-    }
-    update()
-    window.addEventListener('scroll', update, { passive: true })
-    window.addEventListener('resize', update)
-    return () => {
-      window.removeEventListener('scroll', update)
-      window.removeEventListener('resize', update)
-    }
-  }, [])
-  return (
-    <div className="fixed inset-x-0 top-0 z-[60] h-[3px]" aria-hidden="true">
-      <div
-        ref={bar}
-        className="h-full bg-blue-glow transition-[width] duration-100 ease-linear"
-        style={{ width: '0%', boxShadow: '0 0 8px rgba(59,108,224,0.6)' }}
-      />
-    </div>
-  )
-}
-
-function Logo({ className = 'text-lg' }) {
-  return (
-    <span className={`inline-flex items-center gap-2 ${className}`}>
-      <svg width="20" height="20" viewBox="0 0 24 24" className="flex-none" style={{ filter: 'drop-shadow(0 0 6px rgba(59,108,224,0.85))' }} aria-hidden="true">
-        <defs>
-          <linearGradient id="novara-mark" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse">
-            <stop offset="0%" stopColor="#6E8FE8" />
-            <stop offset="100%" stopColor="#3B6CE0" />
-          </linearGradient>
-        </defs>
-        <path d="M12 0 L15 9 L24 12 L15 15 L12 24 L9 15 L0 12 L9 9 Z" fill="url(#novara-mark)" />
-      </svg>
-      <span className="font-display font-semibold tracking-[0.04em] text-white">
-        NO<span className="text-blue-soft" style={{ textShadow: '0 0 18px rgba(59,108,224,0.7)' }}>V</span>ARA
-      </span>
-    </span>
-  )
-}
-
-function Header() {
-  const [open, setOpen] = useState(false)
-  return (
-    <header className="sticky top-0 z-50 border-b border-white/[0.06] bg-navy-950/70 backdrop-blur-md">
-      <div className="mx-auto flex max-w-[1180px] items-center justify-between px-6 py-5">
-        <a href="#" aria-label="Novara, accueil"><Logo /></a>
-        <nav className="hidden gap-8 text-sm font-medium text-slate-body lg:flex" aria-label="Navigation principale">
-          {NAV.map((l) => (
-            <a key={l.label} href={l.href} className="transition-colors duration-200 hover:text-white">{l.label}</a>
-          ))}
-        </nav>
-        <a
-          href={CALENDLY}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hidden items-center gap-1.5 rounded-full bg-blue-glow px-5 py-2.5 text-sm font-semibold text-white transition-colors duration-200 hover:bg-blue-soft lg:inline-flex"
-        >
-          Réserver un appel <ArrowUpRight size={15} />
-        </a>
-        <button
-          type="button"
-          onClick={() => setOpen((o) => !o)}
-          aria-label="Ouvrir le menu"
-          aria-expanded={open}
-          className="text-white lg:hidden"
-        >
-          {open ? <X size={22} /> : <Menu size={22} />}
-        </button>
-      </div>
-      {open && (
-        <div className="border-b border-white/[0.06] bg-navy-900 lg:hidden">
-          <div className="mx-auto flex max-w-[1180px] flex-col px-6">
-            {NAV.map((l) => (
-              <a key={l.label} href={l.href} onClick={() => setOpen(false)} className="border-t border-white/[0.05] py-3.5 text-base text-slate-body">
-                {l.label}
-              </a>
-            ))}
-          </div>
-        </div>
-      )}
-    </header>
-  )
-}
 
 function Hero() {
   return (
@@ -159,9 +23,7 @@ function Hero() {
         </p>
         <div className="fade-up fade-up-3 mt-10 flex flex-col justify-center gap-3.5 sm:flex-row">
           <a
-            href={CALENDLY}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#contact"
             className="rounded-xl bg-blue-glow px-7 py-3.5 font-semibold text-white transition-all duration-200 hover:-translate-y-px hover:bg-blue-soft"
             style={{ boxShadow: '0 0 24px rgba(59,108,224,0.35)' }}
           >
@@ -221,12 +83,52 @@ function Stats() {
   )
 }
 
-function SectionHead({ eyebrow, title, className = '' }) {
+function Services() {
+  const icons = { web: Globe, auto: Bot }
   return (
-    <div className="text-center">
-      <p className="fade-up text-[13px] font-semibold uppercase tracking-[0.14em] text-blue-soft">{eyebrow}</p>
-      <h2 className={`fade-up fade-up-1 mt-3 text-3xl font-bold tracking-tight text-white md:text-4xl ${className}`}>{title}</h2>
-    </div>
+    <section id="services" className="mx-auto max-w-[1080px] scroll-mt-24 px-6 pt-24 md:pt-32">
+      <SectionHead eyebrow="Nos services" title="Deux façons de vous faire gagner du temps et des clients" className="mx-auto max-w-2xl" />
+      <div className="mt-14 grid gap-6 md:grid-cols-2">
+        {SERVICES.map((s, i) => {
+          const Icon = icons[s.id]
+          return (
+            <article key={s.id} className={`fade-up fade-up-${i + 1} flex flex-col rounded-2xl border border-white/10 bg-white/[0.04] p-8 backdrop-blur-sm`}>
+              <div className="flex h-11 w-11 items-center justify-center rounded-full bg-blue-glow/15 text-blue-soft">
+                <Icon size={20} />
+              </div>
+              <h3 className="mt-5 text-xl font-bold text-white">{s.title}</h3>
+              <p className="mt-3 flex-1 text-[15px] leading-relaxed text-slate-body">{s.text}</p>
+              <a
+                href={s.href}
+                className="mt-7 inline-flex items-center gap-2 self-start rounded-xl border-2 border-white/15 px-5 py-2.5 text-sm font-semibold text-white transition-all duration-200 hover:border-white/30 hover:bg-white/[0.03]"
+              >
+                {s.cta} <ArrowRight size={15} />
+              </a>
+            </article>
+          )
+        })}
+      </div>
+    </section>
+  )
+}
+
+function Contact() {
+  return (
+    <section id="contact" className="mx-auto max-w-[760px] scroll-mt-24 px-6 py-24 md:py-32">
+      <div className="fade-up rounded-3xl border border-white/10 bg-white/[0.04] p-8 backdrop-blur-sm md:p-12">
+        <div className="text-center">
+          <h2 className="text-3xl font-bold tracking-tight text-white md:text-4xl">Prêt à avoir un site qui vous ressemble ?</h2>
+          <p className="mx-auto mt-4 max-w-lg text-[15.5px] text-slate-body">
+            Décrivez votre projet en quelques lignes. Nous vous recontactons pour un premier échange de 30 minutes, offert et sans engagement.
+          </p>
+        </div>
+        <div className="mt-10"><ProjetWebForm /></div>
+        <p className="mt-8 border-t border-white/10 pt-6 text-center text-[14px] text-slate-body">
+          Vous souhaitez plutôt automatiser des tâches ?{' '}
+          <a href="/automatisations#questionnaire" className="font-semibold text-blue-soft hover:text-white">Décrire mon quotidien</a>
+        </p>
+      </div>
+    </section>
   )
 }
 
@@ -344,9 +246,8 @@ function Pricing() {
               ))}
             </ul>
             <a
-              href={CALENDLY}
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#contact"
+              onClick={() => pickFormule(`${p.name} (${p.price})`)}
               className={`mt-8 rounded-xl px-6 py-3 text-center text-sm font-semibold transition-all duration-200 ${p.highlight ? 'bg-blue-glow text-white hover:bg-blue-soft' : 'border-2 border-white/15 text-white hover:border-white/30 hover:bg-white/[0.03]'}`}
             >
               Choisir {p.name}
@@ -392,18 +293,6 @@ function Projects() {
     </section>
   )
 }
-
-function Stars({ rating, size = 16 }) {
-  return (
-    <div className="flex gap-0.5 text-blue-soft">
-      {Array.from({ length: 5 }).map((_, i) => (
-        <Star key={i} size={size} fill={i < rating ? 'currentColor' : 'none'} className={i < rating ? '' : 'text-white/20'} />
-      ))}
-    </div>
-  )
-}
-
-const inputCls = 'rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 text-sm text-white placeholder:text-slate-body focus:border-blue-glow focus:outline-none'
 
 function Reviews() {
   const [reviews, setReviews] = useState([])
@@ -554,37 +443,6 @@ function Faq() {
   )
 }
 
-function Contact() {
-  return (
-    <section id="contact" className="mx-auto max-w-[720px] scroll-mt-24 px-6 py-24 text-center md:py-32">
-      <div className="fade-up rounded-3xl border border-white/10 bg-white/[0.04] p-12 backdrop-blur-sm md:p-16">
-        <h2 className="text-3xl font-bold tracking-tight text-white md:text-4xl">Prêt à avoir un site qui vous ressemble ?</h2>
-        <p className="mt-4 text-[15.5px] text-slate-body">Réservez un appel de 30 minutes, sans engagement, pour que nous parlions de votre projet.</p>
-        <a
-          href={CALENDLY}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-8 inline-block rounded-xl bg-blue-glow px-7 py-3.5 font-semibold text-white transition-all duration-200 hover:-translate-y-px hover:bg-blue-soft"
-          style={{ boxShadow: '0 0 24px rgba(59,108,224,0.35)' }}
-        >
-          Réserver un appel
-        </a>
-      </div>
-    </section>
-  )
-}
-
-function Footer() {
-  return (
-    <footer className="border-t border-white/[0.06] px-6 py-10">
-      <div className="mx-auto flex max-w-[1180px] flex-col items-center justify-between gap-4 md:flex-row">
-        <Logo className="text-sm" />
-        <p className="text-[13px] text-slate-body">© 2026 Novara — Sites web sur mesure</p>
-      </div>
-    </footer>
-  )
-}
-
 function Admin() {
   const [password, setPassword] = useState('')
   const [authed, setAuthed] = useState(false)
@@ -687,30 +545,22 @@ function Admin() {
   )
 }
 
-export default function App({ admin = false }) {
+export default function Home({ admin = false }) {
   if (admin) return <Admin />
   return (
-    <>
-      <Background />
-      <RevealOnScroll />
-      <ScrollProgress />
-      <div className="relative z-10">
-        <Header />
-        <main>
-          <Hero />
-          <Stats />
-          <ForWho />
-          <KeyFacts />
-          <Why />
-          <Process />
-          <Pricing />
-          <Projects />
-          <Reviews />
-          <Faq />
-          <Contact />
-        </main>
-        <Footer />
-      </div>
-    </>
+    <Shell current="/">
+      <Hero />
+      <Stats />
+      <Services />
+      <ForWho />
+      <KeyFacts />
+      <Why />
+      <Process />
+      <Pricing />
+      <Projects />
+      <Reviews />
+      <Faq />
+      <Contact />
+    </Shell>
   )
 }

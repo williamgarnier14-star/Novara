@@ -1,14 +1,57 @@
 // Tous les textes du site au même endroit.
 // Le prérendu s'en sert aussi pour générer les données structurées (GEO).
 
-export const SITE_URL = 'https://novara-mu-sand.vercel.app'
-export const CALENDLY = 'https://calendly.com/william-garnier14/30min'
+export const SITE_URL = 'https://www.agencenovara.fr'
+
+// Identité publique (mentions légales, CGV, données structurées)
+export const IDENTITY = {
+  brand: 'Agence Novara',
+  owner: 'Émilie Caignet',
+  legalForm: 'Entreprise individuelle (EI)',
+  legalName: 'Émilie Caignet (EI), exerçant sous le nom commercial Agence Novara',
+  siret: '792 214 116 00016',
+  street: '22 La Herlise',
+  postalCode: '35540',
+  city: 'Miniac-Morvan',
+  region: 'Pays de Saint-Malo',
+  email: 'contact@agencenovara.fr',
+  phone: '06 72 36 40 97',
+  phoneIntl: '+33672364097',
+  // À vérifier avec les CGV validées
+  vat: 'TVA non applicable, article 293 B du Code général des impôts.',
+}
 
 export const NAV = [
-  { label: 'Réalisations', href: '#realisations' },
-  { label: 'Process', href: '#process' },
-  { label: 'Tarifs', href: '#tarifs' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Sites web', href: '/#services' },
+  { label: 'Automatisations & IA', href: '/automatisations' },
+  { label: 'Réalisations', href: '/#realisations' },
+  { label: 'Tarifs', href: '/#tarifs' },
+  { label: 'À propos', href: '/a-propos' },
+  { label: 'Contact', href: '/#contact' },
+]
+
+export const FOOTER_LINKS = [
+  { label: 'Contact', href: '/#contact' },
+  { label: 'Mentions légales', href: '/mentions-legales' },
+  { label: 'Politique de confidentialité', href: '/confidentialite' },
+  { label: 'Conditions générales de vente', href: '/cgv' },
+]
+
+export const SERVICES = [
+  {
+    id: 'web',
+    title: 'Création de sites web',
+    text: 'Des sites sur mesure, rapides et optimisés pour Google, pensés pour transformer vos visiteurs en clients. Dès 490 €, livrés en 1 à 3 jours.',
+    cta: 'Voir les formules',
+    href: '/#tarifs',
+  },
+  {
+    id: 'auto',
+    title: 'Automatisations & IA',
+    text: 'Des automatisations sur mesure pour les indépendants et les petites entreprises. Nous partons de vos habitudes de travail pour simplifier les tâches qui vous prennent du temps.',
+    cta: 'Découvrir les automatisations',
+    href: '/automatisations',
+  },
 ]
 
 export const STATS = [
@@ -39,7 +82,8 @@ export const KEY_FACTS = [
   { label: 'Prix', value: 'De 490 € à 990 €, tarif fixe annoncé dès le départ' },
   { label: 'Délai', value: '1 à 3 jours selon la formule' },
   { label: 'Inclus', value: 'Design adapté au mobile, optimisation pour Google, révisions, accompagnement' },
-  { label: 'Démarrage', value: 'Appel découverte gratuit de 30 minutes, sans engagement' },
+  { label: 'Démarrage', value: 'Premier échange offert de 30 minutes, sans engagement' },
+  { label: 'Basée', value: 'Pays de Saint-Malo (Ille-et-Vilaine), clients partout en France' },
 ]
 
 export const WHY = [
@@ -114,7 +158,7 @@ export const PROJECTS = [
 export const FAQ = [
   {
     q: 'Combien de temps pour livrer mon site ?',
-    a: 'Grâce à une équipe dédiée, comptez entre 1 et 3 jours selon la formule choisie. Le délai précis est confirmé après notre échange de découverte.',
+    a: 'Comptez entre 1 et 3 jours selon la formule choisie. Le délai précis est confirmé après notre échange de découverte.',
   },
   {
     q: "Combien coûte la création d'un site internet avec Novara ?",
@@ -142,6 +186,16 @@ export const FAQ = [
   },
   {
     q: 'Comment démarrer mon projet ?',
-    a: "Réservez un appel découverte gratuit de 30 minutes, sans engagement. Nous parlons de votre activité et de vos objectifs, puis je vous propose la formule adaptée et un délai précis.",
+    a: "Décrivez votre projet dans le formulaire de contact. Nous vous recontactons pour un premier échange offert de 30 minutes, sans engagement, puis nous vous proposons la formule adaptée et un délai précis.",
   },
 ]
+
+export const AUDIT_LAUNCH_END = '2027-03-31' // inclus, heure de Paris
+export const AUDIT_PRICE_LAUNCH = 150
+export const AUDIT_PRICE_STANDARD = 200
+
+// Date du jour en France métropolitaine, au format AAAA-MM-JJ
+export function parisDate(d = new Date()) {
+  return new Intl.DateTimeFormat('fr-CA', { timeZone: 'Europe/Paris', year: 'numeric', month: '2-digit', day: '2-digit' }).format(d)
+}
+export const auditPrice = (d) => (parisDate(d) <= AUDIT_LAUNCH_END ? AUDIT_PRICE_LAUNCH : AUDIT_PRICE_STANDARD)

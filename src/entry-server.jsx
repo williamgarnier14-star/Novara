@@ -1,8 +1,11 @@
 import { renderToString } from 'react-dom/server'
-import App from './App.jsx'
+import { PAGES } from './pages/registry.js'
 
-export { SITE_URL, CALENDLY, PLANS, FAQ, KEY_FACTS, PROJECTS } from './content.js'
+export { PAGES }
+export { SITE_URL, IDENTITY, PLANS, FAQ, KEY_FACTS, PROJECTS, SERVICES, auditPrice } from './content.js'
+export { AUTO_FAQ, SECTORS } from './content-auto.js'
 
-export function render() {
-  return renderToString(<App />)
+export function render(key) {
+  const { Component } = PAGES[key]
+  return renderToString(<Component />)
 }

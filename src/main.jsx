@@ -1,14 +1,15 @@
 import { StrictMode } from 'react'
 import { createRoot, hydrateRoot } from 'react-dom/client'
-import App from './App.jsx'
+import { PAGES } from './pages/registry.js'
 import './index.css'
 
-const admin = new URLSearchParams(window.location.search).has('admin')
 const root = document.getElementById('root')
-const app = <StrictMode><App admin={admin} /></StrictMode>
+const key = root.dataset.page || 'home'
+const { Component } = PAGES[key] || PAGES.home
+const admin = key === 'home' && new URLSearchParams(window.location.search).has('admin')
+const app = <StrictMode><Component admin={admin} /></StrictMode>
 
-// La page est prérendue (HTML complet pour Google et les IA) : on la « réactive ».
-// L'espace admin, lui, n'est pas prérendu.
+// Chaque page est prérendue (HTML complet pour Google et les IA) : on la « réactive ».
 if (root.hasChildNodes() && !admin) hydrateRoot(root, app)
 else {
   root.innerHTML = ''

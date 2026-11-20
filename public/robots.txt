@@ -23,4 +23,4 @@ Allow: /
 User-agent: Bingbot
 Allow: /
 
-Sitemap: https://novara-mu-sand.vercel.app/sitemap.xml
+Sitemap: https://www.agencenovara.fr/sitemap.xml
