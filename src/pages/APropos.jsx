@@ -1,6 +1,6 @@
 import { ArrowRight, MapPin, HeartHandshake, Lightbulb } from 'lucide-react'
 import { Shell, card } from '../components/ui.jsx'
-import { IDENTITY } from '../content.js'
+import { IDENTITY, FORM_WEB, FORM_AUTO, EXTERNAL } from '../content.js'
 
 const VALUES = [
   { icon: HeartHandshake, title: 'Partir de votre réalité', text: 'Chaque projet commence par votre façon de travailler, pas par un outil à vous vendre.' },
@@ -30,8 +30,8 @@ export default function APropos() {
               <p>Mon approche reste la même : écouter, simplifier, puis vous rendre autonome.</p>
             </div>
             <div className="fade-up fade-up-3 mt-8 flex flex-col gap-3 sm:flex-row">
-              <a href="/#contact" className="inline-flex items-center justify-center gap-2 rounded-xl bg-blue-glow px-6 py-3 font-semibold text-white transition-colors hover:bg-blue-soft">Démarrer un projet web <ArrowRight size={16} /></a>
-              <a href="/automatisations#questionnaire" className="inline-flex items-center justify-center rounded-xl border-2 border-white/15 px-6 py-3 font-semibold text-white transition-colors hover:border-white/30">Décrire mon quotidien</a>
+              <a href={FORM_WEB} {...EXTERNAL} className="inline-flex items-center justify-center gap-2 rounded-xl bg-blue-glow px-6 py-3 font-semibold text-white transition-colors hover:bg-blue-soft">Démarrer un projet web <ArrowRight size={16} /></a>
+              <a href={FORM_AUTO} {...EXTERNAL} className="inline-flex items-center justify-center rounded-xl border-2 border-white/15 px-6 py-3 font-semibold text-white transition-colors hover:border-white/30">Décrire mon quotidien</a>
             </div>
           </div>
         </div>

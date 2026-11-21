@@ -79,7 +79,6 @@ Les IA croisent plusieurs sources : **le même message partout** renforce la con
 ## 5. À faire dans Vercel après le déploiement
 - Brancher le stockage des avis : Storage > Upstash for Redis > Connect.
 - Ajouter la variable `ADMIN_PASSWORD` (mot de passe de modération, page `/?admin`).
-- Brancher le CRM RTB (variables `RTB_API_URL`, `RTB_API_KEY`) : voir `docs/raccordement-rtb.md`.
 - Relier le domaine `www.agencenovara.fr` (Settings > Domains). Le site y pointe déjà partout.
 - Après le 31 mars 2027 : redéployer une fois, pour que les données structurées et `llms.txt`
   affichent le tarif standard de l'audit (la page, elle, bascule toute seule).

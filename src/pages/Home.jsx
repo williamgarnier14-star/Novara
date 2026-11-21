@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react'
 import { ArrowRight, ArrowUpRight, Bot, Check, ChevronDown, Globe, LifeBuoy, LoaderCircle, Palette, Play, Star, Wallet, X, Zap } from 'lucide-react'
-import { STATS, PROFILES, KEY_FACTS, WHY, STEPS, PLANS, PROJECTS, FAQ, SERVICES } from '../content.js'
+import { STATS, PROFILES, KEY_FACTS, WHY, STEPS, PLANS, PROJECTS, FAQ, SERVICES, FORM_WEB, EXTERNAL } from '../content.js'
 import { Shell, SectionHead, Stars, inputCls } from '../components/ui.jsx'
-import { ProjetWebForm, pickFormule } from '../components/Forms.jsx'
 import projectThumb from '../assets/emilie-project-thumb.jpg'
 
 const ICONS = { zap: Zap, palette: Palette, wallet: Wallet, lifebuoy: LifeBuoy }
@@ -23,7 +22,8 @@ function Hero() {
         </p>
         <div className="fade-up fade-up-3 mt-10 flex flex-col justify-center gap-3.5 sm:flex-row">
           <a
-            href="#contact"
+            href={FORM_WEB}
+            {...EXTERNAL}
             className="rounded-xl bg-blue-glow px-7 py-3.5 font-semibold text-white transition-all duration-200 hover:-translate-y-px hover:bg-blue-soft"
             style={{ boxShadow: '0 0 24px rgba(59,108,224,0.35)' }}
           >
@@ -114,18 +114,23 @@ function Services() {
 
 function Contact() {
   return (
-    <section id="contact" className="mx-auto max-w-[760px] scroll-mt-24 px-6 py-24 md:py-32">
-      <div className="fade-up rounded-3xl border border-white/10 bg-white/[0.04] p-8 backdrop-blur-sm md:p-12">
-        <div className="text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-white md:text-4xl">Prêt à avoir un site qui vous ressemble ?</h2>
-          <p className="mx-auto mt-4 max-w-lg text-[15.5px] text-slate-body">
-            Décrivez votre projet en quelques lignes. Nous vous recontactons pour un premier échange de 30 minutes, offert et sans engagement.
-          </p>
-        </div>
-        <div className="mt-10"><ProjetWebForm /></div>
-        <p className="mt-8 border-t border-white/10 pt-6 text-center text-[14px] text-slate-body">
+    <section id="contact" className="mx-auto max-w-[720px] scroll-mt-24 px-6 py-24 text-center md:py-32">
+      <div className="fade-up rounded-3xl border border-white/10 bg-white/[0.04] p-12 backdrop-blur-sm md:p-16">
+        <h2 className="text-3xl font-bold tracking-tight text-white md:text-4xl">Prêt à avoir un site qui vous ressemble ?</h2>
+        <p className="mx-auto mt-4 max-w-lg text-[15.5px] text-slate-body">
+          Décrivez votre projet en quelques minutes. Nous vous recontactons pour un premier échange de 30 minutes, offert et sans engagement.
+        </p>
+        <a
+          href={FORM_WEB}
+          {...EXTERNAL}
+          className="mt-8 inline-flex items-center gap-2 rounded-xl bg-blue-glow px-7 py-3.5 font-semibold text-white transition-all duration-200 hover:-translate-y-px hover:bg-blue-soft"
+          style={{ boxShadow: '0 0 24px rgba(59,108,224,0.35)' }}
+        >
+          Démarrer mon projet <ArrowUpRight size={17} />
+        </a>
+        <p className="mt-8 border-t border-white/10 pt-6 text-[14px] text-slate-body">
           Vous souhaitez plutôt automatiser des tâches ?{' '}
-          <a href="/automatisations#questionnaire" className="font-semibold text-blue-soft hover:text-white">Décrire mon quotidien</a>
+          <a href="/automatisations" className="font-semibold text-blue-soft hover:text-white">Découvrir les automatisations</a>
         </p>
       </div>
     </section>
@@ -246,8 +251,8 @@ function Pricing() {
               ))}
             </ul>
             <a
-              href="#contact"
-              onClick={() => pickFormule(`${p.name} (${p.price})`)}
+              href={FORM_WEB}
+              {...EXTERNAL}
               className={`mt-8 rounded-xl px-6 py-3 text-center text-sm font-semibold transition-all duration-200 ${p.highlight ? 'bg-blue-glow text-white hover:bg-blue-soft' : 'border-2 border-white/15 text-white hover:border-white/30 hover:bg-white/[0.03]'}`}
             >
               Choisir {p.name}

@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { ArrowUpRight, Menu, Star, X } from 'lucide-react'
-import { NAV, FOOTER_LINKS, IDENTITY } from '../content.js'
+import { NAV, FOOTER_LINKS, IDENTITY, FORM_WEB, EXTERNAL } from '../content.js'
 
 export function Background() {
   return (
@@ -88,7 +88,8 @@ export function Logo({ className = 'text-lg' }) {
   )
 }
 
-export function Header({ current = '/', cta = { label: 'Démarrer mon projet', href: '/#contact' } }) {
+export function Header({ current = '/', cta = { label: 'Démarrer mon projet', href: FORM_WEB } }) {
+  const ext = cta.href.startsWith('http') ? EXTERNAL : {}
   const [open, setOpen] = useState(false)
   const isCurrent = (href) => href === current
   return (
@@ -109,6 +110,7 @@ export function Header({ current = '/', cta = { label: 'Démarrer mon projet', h
         </nav>
         <a
           href={cta.href}
+          {...ext}
           className="hidden flex-none items-center gap-1.5 rounded-full bg-blue-glow px-5 py-2.5 text-sm font-semibold text-white transition-colors duration-200 hover:bg-blue-soft lg:inline-flex"
         >
           {cta.label} <ArrowUpRight size={15} />
@@ -131,7 +133,7 @@ export function Header({ current = '/', cta = { label: 'Démarrer mon projet', h
                 {l.label}
               </a>
             ))}
-            <a href={cta.href} onClick={() => setOpen(false)} className="my-4 rounded-xl bg-blue-glow px-5 py-3 text-center text-sm font-semibold text-white">
+            <a href={cta.href} {...ext} onClick={() => setOpen(false)} className="my-4 rounded-xl bg-blue-glow px-5 py-3 text-center text-sm font-semibold text-white">
               {cta.label}
             </a>
           </nav>

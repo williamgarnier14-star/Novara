@@ -21,10 +21,9 @@ Site d'Agence Novara (React, Vite, Tailwind), prérendu page par page pour le r�
 - Titres et descriptions SEO : `scripts/gen-html.js`
 
 ## Fonctions serveur (Vercel)
-- `api/demande.js` : formulaires Projet web et Automatisations → CRM RTB (voir `docs/raccordement-rtb.md`)
+- Formulaires : Airtable (liens `FORM_WEB` et `FORM_AUTO` dans `src/content.js`)
 - `api/avis.js` : avis clients (Upstash Redis, mot de passe `ADMIN_PASSWORD`)
 
 ## Documentation
 - `GEO.md` : stratégie de référencement et textes pour les réseaux
-- `docs/raccordement-rtb.md` : informations à fournir pour finaliser le CRM
 - `docs/procedure-audit.md` : procédure interne d'entretien (non publiée)
