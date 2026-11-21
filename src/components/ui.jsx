@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { ArrowUpRight, Menu, Star, X } from 'lucide-react'
-import { NAV, FOOTER_LINKS, IDENTITY } from '../content.js'
+import { NAV, FOOTER_LINKS, IDENTITY, FORM_WEB, EXTERNAL } from '../content.js'
 
 export function Background() {
   return (
@@ -88,7 +88,8 @@ export function Logo({ className = 'text-lg' }) {
   )
 }
 
-export function Header({ current = '/', cta = { label: 'Démarrer mon projet', href: '/#contact' } }) {
+export function Header({ current = '/', cta = { label: 'Démarrer mon projet', href: FORM_WEB } }) {
+  const ext = cta.href.startsWith('http') ? EXTERNAL : {}
   const [open, setOpen] = useState(false)
   const isCurrent = (href) => href === current
   return (
@@ -109,6 +110,7 @@ export function Header({ current = '/', cta = { label: 'Démarrer mon projet', h
         </nav>
         <a
           href={cta.href}
+          {...ext}
           className="hidden flex-none items-center gap-1.5 rounded-full bg-blue-glow px-5 py-2.5 text-sm font-semibold text-white transition-colors duration-200 hover:bg-blue-soft lg:inline-flex"
         >
           {cta.label} <ArrowUpRight size={15} />
@@ -116,6 +118,28 @@ export function Header({ current = '/', cta = { label: 'Démarrer mon projet', h
         <button type="button" onClick={() => setOpen((o) => !o)} aria-label="Ouvrir le menu" aria-expanded={open} className="text-white lg:hidden">
           {open ? <X size={22} /> : <Menu size={22} />}
         </button>
+      </div>
+      {/* Onglets mobiles : passer d'une offre à l'autre, toujours visibles en haut */}
+      <div className="mx-auto max-w-[1180px] px-6 pb-4 lg:hidden">
+        <nav className="grid grid-cols-2 gap-1 rounded-xl border border-white/10 bg-white/[0.04] p-1" aria-label="Nos offres">
+          {[
+            { label: 'Site web', href: '/' },
+            { label: 'Automatisation', href: '/automatisations' },
+          ].map((t) => {
+            const active = current === t.href
+            return (
+              <a
+                key={t.href}
+                href={t.href}
+                aria-current={active ? 'page' : undefined}
+                className={`rounded-lg py-2.5 text-center text-sm font-semibold transition-colors duration-200 ${active ? 'bg-blue-glow text-white' : 'text-slate-body hover:text-white'}`}
+                style={active ? { boxShadow: '0 0 18px rgba(59,108,224,0.35)' } : undefined}
+              >
+                {t.label}
+              </a>
+            )
+          })}
+        </nav>
       </div>
       {open && (
         <div className="border-b border-white/[0.06] bg-navy-900 lg:hidden">
@@ -131,7 +155,7 @@ export function Header({ current = '/', cta = { label: 'Démarrer mon projet', h
                 {l.label}
               </a>
             ))}
-            <a href={cta.href} onClick={() => setOpen(false)} className="my-4 rounded-xl bg-blue-glow px-5 py-3 text-center text-sm font-semibold text-white">
+            <a href={cta.href} {...ext} onClick={() => setOpen(false)} className="my-4 rounded-xl bg-blue-glow px-5 py-3 text-center text-sm font-semibold text-white">
               {cta.label}
             </a>
           </nav>

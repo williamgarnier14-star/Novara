@@ -3,6 +3,11 @@
 
 export const SITE_URL = 'https://www.agencenovara.fr'
 
+// Formulaires Airtable (s'ouvrent dans un nouvel onglet, sans connexion Airtable)
+export const FORM_WEB = 'https://airtable.com/appxtl1bFJk12XwM8/pagCz2YcJBILtanPh/form'
+export const FORM_AUTO = 'https://airtable.com/appxtl1bFJk12XwM8/pag4GgjNx8wiIfQNU/form'
+export const EXTERNAL = { target: '_blank', rel: 'noopener noreferrer' }
+
 // Identité publique (mentions légales, CGV, données structurées)
 export const IDENTITY = {
   brand: 'Agence Novara',

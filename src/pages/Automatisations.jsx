@@ -4,9 +4,8 @@ import {
 } from 'lucide-react'
 import { useState } from 'react'
 import { Shell, SectionHead, card } from '../components/ui.jsx'
-import { QuestionnaireForm } from '../components/Forms.jsx'
 import { AuditSoloPrice, AuditDeduction } from '../components/AuditPrice.jsx'
-import { IDENTITY } from '../content.js'
+import { IDENTITY, FORM_AUTO, EXTERNAL } from '../content.js'
 import { DAY_CHANGE, SECTORS, CASE_STUDY, OPPORTUNITIES, DELIVERY, AUTO_FAQ } from '../content-auto.js'
 
 const ICONS = {
@@ -14,12 +13,13 @@ const ICONS = {
   home: House, store: Store, graduation: GraduationCap, calendar: CalendarCheck,
 }
 
-const CTA = { label: 'Décrire mon quotidien', href: '#questionnaire' }
+const CTA = { label: 'Décrire mon quotidien', href: FORM_AUTO }
 
 function PrimaryCta({ className = '' }) {
   return (
     <a
-      href="#questionnaire"
+      href={FORM_AUTO}
+      {...EXTERNAL}
       className={`inline-flex items-center justify-center gap-2 rounded-xl bg-blue-glow px-7 py-3.5 font-semibold text-white transition-all duration-200 hover:-translate-y-px hover:bg-blue-soft ${className}`}
       style={{ boxShadow: '0 0 24px rgba(59,108,224,0.35)' }}
     >
@@ -307,7 +307,18 @@ function Questionnaire() {
             Prenez quelques minutes pour nous décrire votre activité et ce qui vous prend du temps. Vos réponses nous aideront à préparer notre premier échange.
           </p>
         </div>
-        <div className="mt-10"><QuestionnaireForm /></div>
+        <ul className="mx-auto mt-8 flex max-w-md flex-col gap-2.5 text-left text-[14.5px] text-slate-body">
+          {['Votre activité et votre organisation', 'Une tâche qui revient souvent et ce qui vous prend du temps', 'Les outils que vous utilisez aujourd’hui'].map((t) => (
+            <li key={t} className="flex items-start gap-2.5"><span className="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-blue-glow" />{t}</li>
+          ))}
+        </ul>
+        <div className="mt-10 flex flex-col items-center gap-4 text-center">
+          <PrimaryCta />
+          <p className="max-w-md text-[12.5px] leading-relaxed text-slate-body">
+            Le questionnaire s’ouvre dans un nouvel onglet. Vos réponses servent à préparer notre premier échange ; la commande se fait uniquement par acceptation d’un devis.{' '}
+            <a href="/confidentialite" className="text-blue-soft underline underline-offset-2 hover:text-white">Politique de confidentialité</a>
+          </p>
+        </div>
       </div>
     </section>
   )

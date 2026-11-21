@@ -7,7 +7,7 @@ import { pathToFileURL } from 'node:url'
 
 const dist = path.resolve('dist')
 const ssr = await import(pathToFileURL(path.resolve('dist-ssr/entry-server.js')).href)
-const { render, PAGES, SITE_URL, IDENTITY: I, PLANS, FAQ, KEY_FACTS, PROJECTS, AUTO_FAQ, SECTORS, auditPrice } = ssr
+const { render, PAGES, SITE_URL, IDENTITY: I, PLANS, FAQ, KEY_FACTS, PROJECTS, AUTO_FAQ, SECTORS, auditPrice, FORM_WEB, FORM_AUTO } = ssr
 
 const home = `${SITE_URL}/`
 const orgId = `${home}#agence`
@@ -154,8 +154,8 @@ ${AUTO_FAQ.map((f) => `### ${f.q}\n${f.a}`).join('\n\n')}
 
 ## Contact
 - Site : ${home}
-- Projet web : ${home}#contact
-- Questionnaire automatisations : ${SITE_URL}/automatisations#questionnaire
+- Demande de projet web (formulaire) : ${FORM_WEB}
+- Questionnaire automatisations : ${FORM_AUTO}
 - E-mail : ${I.email}
 - Téléphone : ${I.phone}
 `

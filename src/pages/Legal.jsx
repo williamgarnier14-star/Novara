@@ -71,8 +71,8 @@ export function Confidentialite() {
       </S>
       <S title="Données collectées">
         <ul>
-          <li><strong>Formulaire « Projet web »</strong> : prénom et nom, activité, e-mail, téléphone, formule envisagée, description du projet.</li>
-          <li><strong>Questionnaire « Automatisations & IA »</strong> : prénom et nom, activité, e-mail, téléphone, entreprise, organisation (seul ou en équipe), taille de l’équipe et services concernés, description d’une tâche, outils utilisés.</li>
+          <li><strong>Formulaire « Projet web »</strong> (hébergé par Airtable) : prénom et nom, activité, e-mail, téléphone, formule envisagée, description du projet.</li>
+          <li><strong>Questionnaire « Automatisations & IA »</strong> (hébergé par Airtable) : prénom et nom, activité, e-mail, téléphone, entreprise, organisation (seul ou en équipe), taille de l’équipe et services concernés, description d’une tâche, outils utilisés.</li>
           <li><strong>Avis clients</strong> : nom, note et commentaire, publiés après validation.</li>
           <li><strong>Audit</strong> : notes d’entretien et, uniquement avec votre accord préalable, enregistrement audio de l’entretien.</li>
         </ul>
@@ -90,8 +90,8 @@ export function Confidentialite() {
       <S title="Destinataires et sous-traitants">
         <p>Vos données sont destinées à {I.owner} pour {I.brand}. Elles ne sont jamais vendues. Elles peuvent être traitées par les prestataires techniques suivants :</p>
         <ul>
-          <li>Vercel (hébergement du site et traitement des formulaires) ;</li>
-          <li>le CRM RTB (gestion des demandes et de la relation client) ;</li>
+          <li>Vercel (hébergement du site) ;</li>
+          <li>Airtable — Formagrid Inc. (formulaires « Projet web » et « Automatisations & IA », et suivi des demandes) ;</li>
           <li>Upstash (stockage des avis clients) ;</li>
           <li>Plaud (enregistrement et transcription des entretiens d’audit, uniquement avec votre accord) ;</li>
           <li>Google Fonts (affichage des polices du site).</li>
