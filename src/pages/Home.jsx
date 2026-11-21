@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { ArrowRight, ArrowUpRight, Bot, Check, ChevronDown, Globe, LifeBuoy, LoaderCircle, Palette, Play, Star, Wallet, X, Zap } from 'lucide-react'
-import { STATS, PROFILES, KEY_FACTS, WHY, STEPS, PLANS, PROJECTS, FAQ, SERVICES, FORM_WEB, EXTERNAL } from '../content.js'
+import { PROFILES, KEY_FACTS, WHY, STEPS, PLANS, PROJECTS, FAQ, SERVICES, FORM_WEB, EXTERNAL } from '../content.js'
 import { Shell, SectionHead, Stars, inputCls } from '../components/ui.jsx'
 import projectThumb from '../assets/emilie-project-thumb.jpg'
 
@@ -54,7 +54,7 @@ function Hero() {
           </div>
         </div>
         <a
-          href="#stats"
+          href="#services"
           aria-label="Découvrir"
           className="fade-up fade-up-4 mt-10 inline-flex flex-col items-center gap-2 text-[13px] font-medium text-slate-body transition-colors duration-200 hover:text-white"
         >
@@ -65,21 +65,6 @@ function Hero() {
         </a>
       </div>
     </section>
-  )
-}
-
-function Stats() {
-  return (
-    <div id="stats" className="fade-up fade-up-4 mx-auto mt-20 max-w-[720px] scroll-mt-24 px-6 md:mt-28">
-      <div className="grid grid-cols-3 gap-6 rounded-2xl border border-white/10 bg-white/[0.04] p-8 text-center backdrop-blur-sm md:p-10">
-        {STATS.map((s, i) => (
-          <div key={s.label} className={i === 0 ? '' : 'border-l border-white/10'}>
-            <p className="text-3xl font-extrabold text-white md:text-4xl">{s.value}</p>
-            <p className="mt-1.5 text-[13px] uppercase tracking-wide text-slate-body">{s.label}</p>
-          </div>
-        ))}
-      </div>
-    </div>
   )
 }
 
@@ -555,7 +540,6 @@ export default function Home({ admin = false }) {
   return (
     <Shell current="/">
       <Hero />
-      <Stats />
       <Services />
       <ForWho />
       <KeyFacts />

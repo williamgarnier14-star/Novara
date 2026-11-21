@@ -59,12 +59,6 @@ export const SERVICES = [
   },
 ]
 
-export const STATS = [
-  { value: '50+', label: 'Sites livrés' },
-  { value: '5 ans', label: "D'expérience" },
-  { value: '100%', label: 'Sur mesure' },
-]
-
 export const PROFILES = [
   {
     n: '01',
