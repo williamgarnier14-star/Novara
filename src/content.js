@@ -160,7 +160,7 @@ export const FAQ = [
     a: 'Comptez entre 1 et 3 jours selon la formule choisie. Le délai précis est confirmé après notre échange de découverte.',
   },
   {
-    q: "Combien coûte la création d'un site internet avec Novara ?",
+    q: "Combien coûte la création d'un site internet avec Agence Novara ?",
     a: "Les tarifs sont fixes et annoncés dès le départ : 490 € pour un site vitrine une page (Essentiel), 790 € pour un site jusqu'à 5 pages (Pro) et 990 € pour un site entièrement sur mesure, sans limite de pages (Signature). Aucun frais caché.",
   },
   {

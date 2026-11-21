@@ -287,7 +287,7 @@ function Pricing() {
         <div>
           <h3 className="text-lg font-bold text-white">Vos comptes restent sous votre contrôle</h3>
           <p className="mt-3 text-[15px] leading-relaxed text-slate-body">
-            Les comptes d’hébergement, d’automatisation et d’intelligence artificielle nécessaires à la prestation sont ouverts à votre nom ou à celui de votre entreprise. Vous gardez les accès administrateur et payez directement vos éventuels abonnements aux outils. Si vous souhaitez une intervention de Novara, vous pouvez nous accorder un accès délégué et le retirer ensuite.
+            Les comptes d’hébergement, d’automatisation et d’intelligence artificielle nécessaires à la prestation sont ouverts à votre nom ou à celui de votre entreprise. Vous gardez les accès administrateur et payez directement vos éventuels abonnements aux outils. Si vous souhaitez une intervention d’Agence Novara, vous pouvez nous accorder un accès délégué et le retirer ensuite.
           </p>
           <p className="mt-4 inline-flex items-center gap-2 text-[13px] font-medium text-blue-soft"><KeyRound size={15} /> Accès administrateur toujours à votre nom</p>
         </div>

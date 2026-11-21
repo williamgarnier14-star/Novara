@@ -82,7 +82,7 @@ export function Logo({ className = 'text-lg' }) {
         <path d="M12 0 L15 9 L24 12 L15 15 L12 24 L9 15 L0 12 L9 9 Z" fill="url(#novara-mark)" />
       </svg>
       <span className="font-display font-semibold tracking-[0.04em] text-white">
-        NO<span className="text-blue-soft" style={{ textShadow: '0 0 18px rgba(59,108,224,0.7)' }}>V</span>ARA
+        <span className="whitespace-nowrap">AGENCE NO<span className="text-blue-soft" style={{ textShadow: '0 0 18px rgba(59,108,224,0.7)' }}>V</span>ARA</span>
       </span>
     </span>
   )
