@@ -150,7 +150,7 @@ function KeyFacts() {
           Création de site web sur mesure pour indépendants, artisans et PME
         </h2>
         <p className="mt-4 max-w-[760px] text-[15px] leading-relaxed text-slate-body">
-          Novara crée des sites internet sur mesure, rapides et optimisés pour Google, pour les indépendants et les petites entreprises qui veulent transformer leurs visiteurs en clients. Chaque site est conçu à partir de zéro, sans modèle générique, avec un prix fixe annoncé dès le départ.
+          Agence Novara crée des sites internet sur mesure, rapides et optimisés pour Google, pour les indépendants et les petites entreprises qui veulent transformer leurs visiteurs en clients. Chaque site est conçu à partir de zéro, sans modèle générique, avec un prix fixe annoncé dès le départ.
         </p>
         <dl className="mt-8 grid gap-x-8 gap-y-5 sm:grid-cols-2 lg:grid-cols-3">
           {KEY_FACTS.map((f) => (
@@ -169,7 +169,7 @@ function Why() {
   return (
     <section className="bg-navy-900/50 py-24 md:py-32">
       <div className="mx-auto max-w-[1080px] px-6">
-        <SectionHead eyebrow="Pourquoi Novara" title="Une approche simple, sans mauvaise surprise" />
+        <SectionHead eyebrow="Pourquoi Agence Novara" title="Une approche simple, sans mauvaise surprise" />
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {WHY.map((w, i) => {
             const Icon = ICONS[w.icon]
@@ -474,7 +474,7 @@ function Admin() {
   if (!authed) {
     return (
       <div className="mx-auto flex min-h-screen max-w-sm flex-col justify-center px-6">
-        <p className="text-center text-sm font-semibold text-white">Espace avis — Novara</p>
+        <p className="text-center text-sm font-semibold text-white">Espace avis — Agence Novara</p>
         <form onSubmit={(e) => { e.preventDefault(); load(password) }} className="mt-6 flex flex-col gap-3">
           <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Mot de passe" className={inputCls} />
           {error && <p className="text-center text-[13px] text-red-400">{error}</p>}
