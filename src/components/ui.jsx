@@ -119,6 +119,28 @@ export function Header({ current = '/', cta = { label: 'Démarrer mon projet', h
           {open ? <X size={22} /> : <Menu size={22} />}
         </button>
       </div>
+      {/* Onglets mobiles : passer d'une offre à l'autre, toujours visibles en haut */}
+      <div className="mx-auto max-w-[1180px] px-6 pb-4 lg:hidden">
+        <nav className="grid grid-cols-2 gap-1 rounded-xl border border-white/10 bg-white/[0.04] p-1" aria-label="Nos offres">
+          {[
+            { label: 'Site web', href: '/' },
+            { label: 'Automatisation', href: '/automatisations' },
+          ].map((t) => {
+            const active = current === t.href
+            return (
+              <a
+                key={t.href}
+                href={t.href}
+                aria-current={active ? 'page' : undefined}
+                className={`rounded-lg py-2.5 text-center text-sm font-semibold transition-colors duration-200 ${active ? 'bg-blue-glow text-white' : 'text-slate-body hover:text-white'}`}
+                style={active ? { boxShadow: '0 0 18px rgba(59,108,224,0.35)' } : undefined}
+              >
+                {t.label}
+              </a>
+            )
+          })}
+        </nav>
+      </div>
       {open && (
         <div className="border-b border-white/[0.06] bg-navy-900 lg:hidden">
           <nav className="mx-auto flex max-w-[1180px] flex-col px-6" aria-label="Navigation mobile">
