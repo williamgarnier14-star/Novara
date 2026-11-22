@@ -35,11 +35,14 @@ function Hero() {
       <div className="mx-auto max-w-[860px] text-center">
         <div className="fade-up inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-4 py-1.5 text-[13px] font-medium text-slate-body">
           <span className="animate-dot-pulse inline-block h-1.5 w-1.5 rounded-full bg-blue-glow" />
-          Automatisations &amp; IA
+          Premier échange offert · 30 minutes
         </div>
-        <h1 className="fade-up fade-up-1 mt-6 text-4xl font-extrabold leading-[1.08] tracking-tight text-white md:text-6xl">
-          Des automatisations qui s’adaptent à <span className="font-serif italic text-blue-soft">votre façon</span> de travailler
+        <h1 className="fade-up fade-up-1 mt-6 text-[2.6rem] font-extrabold leading-[1.05] tracking-tight text-white sm:text-5xl md:text-7xl">
+          Supprimez vos tâches répétitives, <span className="font-serif italic text-blue-soft">gagnez du temps</span>.
         </h1>
+        <p className="fade-up fade-up-1 mt-6 text-xl font-semibold text-white/90 md:text-2xl">
+          Des automatisations qui s’adaptent à votre façon de travailler.
+        </p>
         <div className="fade-up fade-up-2 mx-auto mt-7 flex max-w-[680px] flex-col gap-4 text-[17px] leading-relaxed text-slate-body md:text-lg">
           <p>
             Vous travaillez seul ou en petite équipe ? Nous partons de votre quotidien. Comment arrivent vos demandes ? Où notez-vous vos rendez-vous ? Comment suivez-vous vos devis ? Ensemble, nous repérons ce qui vous prend du temps et concevons une solution sur mesure, facile à prendre en main.
