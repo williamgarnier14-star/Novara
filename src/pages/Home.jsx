@@ -13,10 +13,10 @@ function Hero() {
       <div className="mx-auto max-w-[880px]">
         <div className="fade-up inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-4 py-1.5 text-[13px] font-medium text-slate-body">
           <span className="animate-dot-pulse inline-block h-1.5 w-1.5 rounded-full bg-blue-glow" />
-          Places limitées ce mois-ci
+          Sites web dès 490 € · livrés en 1 à 3 jours
         </div>
         <h1 className="fade-up fade-up-1 mt-6 text-5xl font-extrabold leading-[1.05] tracking-tight text-white md:text-7xl">
-          Un site web qui <span className="font-serif italic text-blue-soft">convertit</span>, pas juste qui existe.
+          Plus de visibilité, <span className="font-serif italic text-blue-soft">plus de clients</span>.
         </h1>
         <p className="fade-up fade-up-2 mx-auto mt-6 max-w-[620px] text-lg leading-relaxed text-slate-body md:text-xl">
           Je conçois et développe des sites sur mesure pour les indépendants et petites entreprises qui veulent un site rapide, soigné, et pensé pour convertir — pas un simple gabarit.
