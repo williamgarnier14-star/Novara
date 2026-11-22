@@ -24,7 +24,7 @@ function PresentationVideo() {
           <button
             type="button"
             onClick={() => setPlaying(true)}
-            aria-label="Voir la présentation d’Agence Novara (vidéo de 28 secondes)"
+            aria-label="Voir la présentation d’Agence Novara (vidéo d’une minute)"
             className="group absolute inset-0 flex items-center justify-center"
           >
             <img src="/presentation-poster.jpg" alt="" width="1280" height="720" className="absolute inset-0 h-full w-full object-cover opacity-80 transition-opacity duration-300 group-hover:opacity-100" />
@@ -37,7 +37,7 @@ function PresentationVideo() {
             </span>
             <span className="absolute inset-x-5 bottom-5 flex items-center justify-between text-[13px] text-white/85">
               <span>Voir ma présentation</span>
-              <span className="rounded-full border border-white/25 px-3 py-1 text-xs">0:28</span>
+              <span className="rounded-full border border-white/25 px-3 py-1 text-xs">1:05</span>
             </span>
           </button>
         )}

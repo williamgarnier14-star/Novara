@@ -1,8 +1,13 @@
-# Vidéo de présentation
+# Vidéos de présentation
 
-Page animée au défilement (HTML, CSS, JS sans dépendance) qui sert de source à la vidéo
-`public/presentation.mp4` affichée dans le bloc « Présentation » de l'accueil.
+## Sites web (`sites/`)
+Page animée pilotée par le temps, calée sur la voix off, qui sert de source à
+`public/presentation.mp4` (bloc « Présentation » de l'accueil).
 
-- Ouvrir `index.html` dans un navigateur et faire défiler pour voir l'animation en direct.
-- La vidéo est générée image par image grâce à la fonction `window.__novaraCapture(scroll, mx, my, slider)`
-  (30 images par seconde, 28 secondes, 1920 × 1080), puis encodée en H.264.
+- Texte de la voix off : `sites/voix-off.json` (voix de synthèse Piper, fr_FR-siwis).
+- Ouvrir `sites/index.html` dans un navigateur pour voir l'animation en boucle.
+- Pour générer la vidéo : `window.__render(t)` est appelé image par image (30 images/s, 1920 × 1080),
+  puis la vidéo et la voix off sont assemblées en MP4 (H.264 + AAC).
+
+## Automatisations
+À venir.
