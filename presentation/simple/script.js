@@ -9,7 +9,10 @@
         [4.6, `<h2>Un site <em>sur mesure</em>.</h2><div class="row"><div class="box">Rapide</div><div class="box">Adapté au mobile</div><div class="box">Visible sur Google</div></div>`],
         [4.2, `<h2>Un site qui <em>travaille</em> pour vous.</h2><ul class="checks"><li><span>✓</span>Plus de visibilité</li><li><span>✓</span>Plus de clients</li></ul>`],
         [4.6, `<h2>En ligne en <em>1 à 3 jours</em>.</h2><div class="row"><div class="box">1. Échange offert</div><div class="arrow">→</div><div class="box">2. Création</div><div class="arrow">→</div><div class="box hot">3. En ligne</div></div>`],
-        [6.4, `<h2>Prix fixes, <em>sans surprise</em>.</h2><div class="row"><div class="price"><b>Essentiel</b><strong>490 €</strong><span>Site une page</span></div><div class="price hot"><b>Pro</b><strong>790 €</strong><span>Jusqu'à 5 pages</span></div><div class="price"><b>Signature</b><strong>990 €</strong><span>Tout sur mesure</span></div></div>`],
+        [3.4, `<h2>Trois formules, <em>prix fixes</em>.</h2><p class="sub">Sans frais cachés.</p>`],
+        [8.6, `<div class="plan-slide"><div class="pcard"><b>Essentiel</b><strong>490 €</strong></div><ul class="plist"><li><span>✓</span>Site vitrine d'une page</li><li><span>✓</span>Adapté au mobile, à la tablette et à l'ordinateur</li><li><span>✓</span>Jusqu'à 4 sections sur mesure</li><li><span>✓</span>1 aller-retour de modifications</li></ul></div>`],
+        [9.6, `<div class="plan-slide"><div class="pcard hot"><p class="pbadge">Le plus choisi</p><b>Pro</b><strong>790 €</strong></div><ul class="plist"><li><span>✓</span>Jusqu'à 5 pages</li><li><span>✓</span>Design sur mesure, adapté à tous les écrans</li><li><span>✓</span>Formulaire de contact</li><li><span>✓</span>Référencement Google de base</li><li><span>✓</span>2 allers-retours de modifications</li></ul></div>`],
+        [10.6, `<div class="plan-slide"><div class="pcard"><b>Signature</b><strong>990 €</strong></div><ul class="plist"><li><span>✓</span>Pages illimitées</li><li><span>✓</span>Design 100 % personnalisé</li><li><span>✓</span>Animations et effets visuels</li><li><span>✓</span>Référencement Google avancé</li><li><span>✓</span>Modifications illimitées</li><li><span>✓</span>Accompagnement après la mise en ligne</li></ul></div>`],
         [4.6, `<p class="k">Premier échange offert · 30 minutes</p><h1>Agence <em>Novara</em></h1><div class="url">www.agencenovara.fr</div>`],
       ],
     },
@@ -51,9 +54,9 @@
       s.el.style.visibility = op > 0.001 ? 'visible' : 'hidden'
       s.el.style.transform = `translate3d(0, ${((1 - enter) * 30 - exit * 30).toFixed(1)}px, 0)`
       // Les éléments arrivent l'un après l'autre
-      const parts = s.el.querySelectorAll('.k, h1, h2, .sub, .box, .arrow, .price, .checks li, .url')
+      const parts = s.el.querySelectorAll('.k, h1, h2, .sub, .box, .arrow, .price, .checks li, .url, .pcard, .plist li')
       parts.forEach((p, j) => {
-        const pe = s.from === 0 && j === 0 ? 1 : ease((t - s.from - 0.15 - j * 0.18) / 0.5)
+        const pe = s.from === 0 && j === 0 ? 1 : ease((t - s.from - 0.15 - j * (s.el.querySelector('.plist') ? 0.32 : 0.18)) / 0.5)
         p.style.opacity = pe.toFixed(3)
         p.style.transform = `translate3d(0, ${((1 - pe) * 28).toFixed(1)}px, 0)`
       })

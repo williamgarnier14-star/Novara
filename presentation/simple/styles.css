@@ -38,3 +38,16 @@ em { font-family: var(--display); font-style: italic; font-weight: 400; color: v
 .price span { font-size: 38px; color: #39445c; font-weight: 600; }
 .price.hot { outline: 6px solid var(--blue); box-shadow: 0 0 70px rgba(59,108,224,.55); }
 .url { margin-top: 56px; padding: 26px 56px; border-radius: 999px; background: var(--blue); font-size: 54px; font-weight: 800; box-shadow: 0 0 60px rgba(59,108,224,.6); }
+.plan-slide { display: flex; align-items: center; gap: 90px; text-align: left; }
+.pcard { width: 520px; padding: 56px 50px; border-radius: 38px; background: var(--paper); color: var(--ink); display: flex; flex-direction: column; gap: 10px; }
+.pcard.hot { outline: 7px solid var(--blue); box-shadow: 0 0 80px rgba(59,108,224,.55); }
+.pcard b { font-size: 44px; letter-spacing: .1em; text-transform: uppercase; color: var(--blue); }
+.pcard strong { font-size: 150px; font-weight: 800; letter-spacing: -.03em; line-height: 1; }
+.pbadge { margin: 0 0 6px; align-self: flex-start; padding: 8px 20px; border-radius: 99px; background: var(--blue); color: #fff; font-size: 26px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.plist { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 22px; max-width: 980px; }
+.plist li { display: flex; align-items: center; gap: 24px; font-size: 48px; font-weight: 600; line-height: 1.15; }
+.plist li span { flex: none; width: 56px; height: 56px; border-radius: 50%; background: var(--blue); display: inline-flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: 0 0 26px rgba(59,108,224,.55); }
+.pcard { flex: none; }
+.pcard strong { white-space: nowrap; }
+.plist { max-width: 1120px; }
+.plist li { font-size: 46px; }
