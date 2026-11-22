@@ -71,7 +71,7 @@ export function ScrollProgress() {
 
 export function Logo({ className = 'text-lg' }) {
   return (
-    <span className={`inline-flex items-center gap-2 ${className}`}>
+    <span className={`inline-flex items-center gap-3.5 ${className}`}>
       <svg width="22" height="22" viewBox="0 0 24 24" className="flex-none" style={{ filter: 'drop-shadow(0 0 6px rgba(59,108,224,0.75))' }} aria-hidden="true">
         <defs>
           <linearGradient id="novara-mark" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse">
@@ -85,7 +85,7 @@ export function Logo({ className = 'text-lg' }) {
         </g>
       </svg>
       <span className="font-display font-semibold tracking-[0.04em] text-white">
-        <span className="whitespace-nowrap">AGENCE NO<span className="text-blue-soft" style={{ textShadow: '0 0 18px rgba(59,108,224,0.7)' }}>V</span>ARA</span>
+        <span className="whitespace-nowrap">AGENCE NOVARA</span>
       </span>
     </span>
   )
