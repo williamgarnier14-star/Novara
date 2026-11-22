@@ -57,7 +57,7 @@ function Hero() {
             Après votre questionnaire, nous vous recontactons pour un premier échange de 30 minutes, offert et sans engagement.
           </p>
         </div>
-        <PresentationVideo className="fade-up fade-up-4 mt-12" src="/presentation-automatisations.mp4" poster="/presentation-automatisations-poster.jpg" duration="0:58" label="Voir la présentation" />
+        <PresentationVideo className="fade-up fade-up-4 mt-12" src="/presentation-automatisations.mp4" poster="/presentation-automatisations-poster.jpg" duration="0:29" label="Voir la présentation" />
       </div>
     </section>
   )
