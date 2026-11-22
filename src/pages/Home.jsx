@@ -37,7 +37,7 @@ function PresentationVideo() {
             </span>
             <span className="absolute inset-x-5 bottom-5 flex items-center justify-between text-[13px] text-white/85">
               <span>Voir ma présentation</span>
-              <span className="rounded-full border border-white/25 px-3 py-1 text-xs">1:05</span>
+              <span className="rounded-full border border-white/25 px-3 py-1 text-xs">1:01</span>
             </span>
           </button>
         )}
