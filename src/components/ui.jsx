@@ -72,14 +72,17 @@ export function ScrollProgress() {
 export function Logo({ className = 'text-lg' }) {
   return (
     <span className={`inline-flex items-center gap-2 ${className}`}>
-      <svg width="20" height="20" viewBox="0 0 24 24" className="flex-none" style={{ filter: 'drop-shadow(0 0 6px rgba(59,108,224,0.85))' }} aria-hidden="true">
+      <svg width="22" height="22" viewBox="0 0 24 24" className="flex-none" style={{ filter: 'drop-shadow(0 0 6px rgba(59,108,224,0.75))' }} aria-hidden="true">
         <defs>
           <linearGradient id="novara-mark" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse">
-            <stop offset="0%" stopColor="#6E8FE8" />
+            <stop offset="0%" stopColor="#7C9CF0" />
             <stop offset="100%" stopColor="#3B6CE0" />
           </linearGradient>
         </defs>
-        <path d="M12 0 L15 9 L24 12 L15 15 L12 24 L9 15 L0 12 L9 9 Z" fill="url(#novara-mark)" />
+        <g fill="none" stroke="url(#novara-mark)" strokeWidth="1.05">
+          <path d="M2.5 2V22M4.4 2V22M6.3 2V22M17.7 2V22M19.6 2V22M21.5 2V22" />
+          <path d="M6.3 2.3L17.7 16.8M6.3 4.9L17.7 19.4M6.3 7.5L17.7 22" />
+        </g>
       </svg>
       <span className="font-display font-semibold tracking-[0.04em] text-white">
         <span className="whitespace-nowrap">AGENCE NO<span className="text-blue-soft" style={{ textShadow: '0 0 18px rgba(59,108,224,0.7)' }}>V</span>ARA</span>
