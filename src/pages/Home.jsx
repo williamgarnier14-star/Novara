@@ -6,6 +6,46 @@ import projectThumb from '../assets/emilie-project-thumb.jpg'
 
 const ICONS = { zap: Zap, palette: Palette, wallet: Wallet, lifebuoy: LifeBuoy }
 
+function PresentationVideo() {
+  const [playing, setPlaying] = useState(false)
+  return (
+    <div className="fade-up fade-up-4 relative mx-auto mt-10 max-w-[640px] overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-sm">
+      <div className="relative aspect-video bg-navy-900">
+        {playing ? (
+          <video
+            className="absolute inset-0 h-full w-full"
+            src="/presentation.mp4"
+            poster="/presentation-poster.jpg"
+            controls
+            autoPlay
+            playsInline
+          />
+        ) : (
+          <button
+            type="button"
+            onClick={() => setPlaying(true)}
+            aria-label="Voir la présentation d’Agence Novara (vidéo de 28 secondes)"
+            className="group absolute inset-0 flex items-center justify-center"
+          >
+            <img src="/presentation-poster.jpg" alt="" width="1280" height="720" className="absolute inset-0 h-full w-full object-cover opacity-80 transition-opacity duration-300 group-hover:opacity-100" />
+            <span className="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-transparent to-navy-950/30" />
+            <span
+              className="relative flex h-16 w-16 flex-none items-center justify-center rounded-full bg-blue-glow text-white transition-transform duration-200 group-hover:scale-105"
+              style={{ boxShadow: '0 0 30px rgba(59,108,224,0.5)' }}
+            >
+              <Play size={22} className="ml-0.5" fill="currentColor" />
+            </span>
+            <span className="absolute inset-x-5 bottom-5 flex items-center justify-between text-[13px] text-white/85">
+              <span>Voir ma présentation</span>
+              <span className="rounded-full border border-white/25 px-3 py-1 text-xs">0:28</span>
+            </span>
+          </button>
+        )}
+      </div>
+    </div>
+  )
+}
+
 function Hero() {
   return (
     <section className="px-6 pb-16 pt-32 text-center md:pb-20 md:pt-40">
@@ -36,23 +76,7 @@ function Hero() {
             Voir mes réalisations
           </a>
         </div>
-        <div className="fade-up fade-up-4 relative mx-auto mt-10 max-w-[640px] overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-sm">
-          <div className="relative flex aspect-video items-center justify-center bg-gradient-to-br from-navy-800 to-navy-900">
-            <span className="absolute left-5 top-5 text-[13px] font-semibold uppercase tracking-wide text-white/25">Présentation</span>
-            <button
-              type="button"
-              aria-label="Voir la présentation"
-              className="flex h-16 w-16 flex-none items-center justify-center rounded-full bg-blue-glow text-white transition-transform duration-200 hover:scale-105"
-              style={{ boxShadow: '0 0 30px rgba(59,108,224,0.5)' }}
-            >
-              <Play size={22} className="ml-0.5" fill="currentColor" />
-            </button>
-            <div className="absolute inset-x-5 bottom-5 flex items-center justify-between text-[13px] text-white/70">
-              <span>Voir ma présentation</span>
-              <span className="rounded-full border border-white/15 px-3 py-1 text-xs">Bientôt disponible</span>
-            </div>
-          </div>
-        </div>
+        <PresentationVideo />
         <a
           href="#services"
           aria-label="Découvrir"
