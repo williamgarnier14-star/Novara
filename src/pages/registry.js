@@ -9,9 +9,9 @@ export const PAGES = {
   home: {
     path: '/',
     Component: Home,
-    title: 'Création de site web sur mesure et automatisations pour indépendants et PME | Agence Novara',
+    title: 'Agence Novara — Sites web & automatisations. Plus de visibilité. Plus de temps.',
     description:
-      'Agence Novara crée des sites internet sur mesure et des automatisations pour indépendants, artisans et PME. Sites dès 490 €, livrés en 1 à 3 jours. Basée dans le Pays de Saint-Malo.',
+      'Agence Novara crée des sites web sur mesure et des automatisations pour indépendants, artisans et PME. Sites dès 490 €, livrés en 1 à 3 jours. Pays de Saint-Malo.',
     priority: '1.0',
   },
   automatisations: {
