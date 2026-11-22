@@ -29,7 +29,6 @@ export const IDENTITY = {
 export const NAV = [
   { label: 'Sites web', href: '/#services' },
   { label: 'Automatisations & IA', href: '/automatisations' },
-  { label: 'Réalisations', href: '/#realisations' },
   { label: 'Tarifs', href: '/#tarifs' },
   { label: 'À propos', href: '/a-propos' },
   { label: 'Contact', href: '/#contact' },
@@ -141,16 +140,6 @@ export const PLANS = [
       'Accompagnement après lancement',
     ],
     highlight: false,
-  },
-]
-
-export const PROJECTS = [
-  {
-    url: 'https://emilie-caignet-immobilier.vercel.app/',
-    category: 'Site vitrine — Mandataire immobilier',
-    name: 'Emilie Caignet Immobilier',
-    text: 'Site multi-pages complet : estimation, biens en vente, conseils, avis clients.',
-    alt: 'Aperçu du site Emilie Caignet Immobilier',
   },
 ]
 
