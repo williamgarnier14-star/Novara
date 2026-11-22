@@ -37,7 +37,7 @@ function Hero() {
             Voir mes réalisations
           </a>
         </div>
-        <PresentationVideo className="fade-up fade-up-4 mt-10" src="/presentation.mp4" poster="/presentation-poster.jpg" duration="1:01" label="Voir ma présentation" />
+        <PresentationVideo className="fade-up fade-up-4 mt-10" src="/presentation.mp4" poster="/presentation-poster.jpg" duration="0:45" label="Voir ma présentation" />
         <a
           href="#services"
           aria-label="Découvrir"
