@@ -4,7 +4,7 @@ import path from 'node:path'
 
 const SITE = 'https://www.agencenovara.fr'
 const pages = [
-  { key: 'home', path: '/', title: 'Création de site web sur mesure et automatisations pour indépendants et PME | Agence Novara', description: 'Agence Novara crée des sites internet sur mesure et des automatisations pour indépendants, artisans et PME. Sites dès 490 €, livrés en 1 à 3 jours. Basée dans le Pays de Saint-Malo.' },
+  { key: 'home', path: '/', title: 'Agence Novara — Sites web & automatisations. Plus de visibilité. Plus de temps.', description: 'Agence Novara crée des sites web sur mesure et des automatisations pour indépendants, artisans et PME. Sites dès 490 €, livrés en 1 à 3 jours. Pays de Saint-Malo.' },
   { key: 'automatisations', path: '/automatisations', title: 'Automatisations sur mesure pour indépendants et TPE | Agence Novara', description: 'Agence Novara analyse vos habitudes de travail et conçoit des automatisations sur mesure pour les indépendants et petites entreprises. Premier échange offert de 30 minutes.' },
   { key: 'apropos', path: '/a-propos', title: 'À propos — Émilie Caignet, fondatrice d’Agence Novara', description: 'Émilie Caignet a fondé Agence Novara pour aider les indépendants et petites entreprises avec des sites web et des automatisations sur mesure. Pays de Saint-Malo.' },
   { key: 'mentions', path: '/mentions-legales', title: 'Mentions légales | Agence Novara', description: 'Mentions légales du site Agence Novara.' },
@@ -26,7 +26,12 @@ for (const p of pages) {
     <meta name="author" content="Agence Novara" />
     <meta name="robots" content="${noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large, max-snippet:-1'}" />
     <link rel="canonical" href="${url}" />
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="application-name" content="Agence Novara" />
+    <meta name="apple-mobile-web-app-title" content="Agence Novara" />
     <meta name="theme-color" content="#060912" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="fr_FR" />
