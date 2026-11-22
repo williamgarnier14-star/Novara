@@ -1,7 +1,6 @@
 # Novara — tous les moteurs de recherche et assistants IA sont les bienvenus
 User-agent: *
 Allow: /
-Disallow: /?admin
 
 # Assistants IA (explicitement autorisés)
 User-agent: GPTBot

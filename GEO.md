@@ -77,8 +77,6 @@ Les IA croisent plusieurs sources : **le même message partout** renforce la con
 4. Tester dans ChatGPT et Perplexity : « Qui crée des sites web sur mesure pour indépendants dès 490 € ? »
 
 ## 5. À faire dans Vercel après le déploiement
-- Brancher le stockage des avis : Storage > Upstash for Redis > Connect.
-- Ajouter la variable `ADMIN_PASSWORD` (mot de passe de modération, page `/?admin`).
 - Relier le domaine `www.agencenovara.fr` (Settings > Domains). Le site y pointe déjà partout.
 - Après le 31 mars 2027 : redéployer une fois, pour que les données structurées et `llms.txt`
   affichent le tarif standard de l'audit (la page, elle, bascule toute seule).

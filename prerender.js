@@ -7,7 +7,7 @@ import { pathToFileURL } from 'node:url'
 
 const dist = path.resolve('dist')
 const ssr = await import(pathToFileURL(path.resolve('dist-ssr/entry-server.js')).href)
-const { render, PAGES, SITE_URL, IDENTITY: I, PLANS, FAQ, KEY_FACTS, PROJECTS, AUTO_FAQ, SECTORS, auditPrice, FORM_WEB, FORM_AUTO } = ssr
+const { render, PAGES, SITE_URL, IDENTITY: I, PLANS, FAQ, KEY_FACTS, AUTO_FAQ, SECTORS, auditPrice, FORM_WEB, FORM_AUTO } = ssr
 
 const home = `${SITE_URL}/`
 const orgId = `${home}#agence`
@@ -142,9 +142,6 @@ Automatisations sur mesure conçues à partir des habitudes de travail du client
 - 15 jours de test avant validation, puis 15 jours d’ajustements après la mise en service.
 - Suivi facultatif : 50 € par mois.
 - Exemples par métier : ${SECTORS.map((s) => s.name).join(', ')}.
-
-## Réalisations
-${PROJECTS.map((p) => `- [${p.name}](${p.url}) — ${p.category}. ${p.text}`).join('\n')}
 
 ## Questions fréquentes — sites web
 ${FAQ.map((f) => `### ${f.q}\n${f.a}`).join('\n\n')}

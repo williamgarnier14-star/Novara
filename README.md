@@ -22,7 +22,6 @@ Site d'Agence Novara (React, Vite, Tailwind), prérendu page par page pour le r�
 
 ## Fonctions serveur (Vercel)
 - Formulaires : Airtable (liens `FORM_WEB` et `FORM_AUTO` dans `src/content.js`)
-- `api/avis.js` : avis clients (Upstash Redis, mot de passe `ADMIN_PASSWORD`)
 
 ## Documentation
 - `GEO.md` : stratégie de référencement et textes pour les réseaux

@@ -73,7 +73,6 @@ export function Confidentialite() {
         <ul>
           <li><strong>Formulaire « Projet web »</strong> (hébergé par Airtable) : prénom et nom, activité, e-mail, téléphone, formule envisagée, description du projet.</li>
           <li><strong>Questionnaire « Automatisations & IA »</strong> (hébergé par Airtable) : prénom et nom, activité, e-mail, téléphone, entreprise, organisation (seul ou en équipe), taille de l’équipe et services concernés, description d’une tâche, outils utilisés.</li>
-          <li><strong>Avis clients</strong> : nom, note et commentaire, publiés après validation.</li>
           <li><strong>Audit</strong> : notes d’entretien et, uniquement avec votre accord préalable, enregistrement audio de l’entretien.</li>
         </ul>
         <p>Pour chaque demande, nous enregistrons aussi le type de formulaire, la page d’origine et la date d’envoi.</p>
@@ -83,7 +82,6 @@ export function Confidentialite() {
           <li>Vous recontacter et préparer un premier échange (mesures précontractuelles prises à votre demande).</li>
           <li>Établir un devis, réaliser l’audit ou la prestation commandée (exécution du contrat).</li>
           <li>Enregistrer un entretien d’audit pour préparer le rapport (consentement, retirable à tout moment).</li>
-          <li>Publier les avis clients validés (consentement).</li>
         </ul>
         <p>Le questionnaire sert uniquement à préparer le contact. La commande est passée par acceptation d’un devis.</p>
       </S>
@@ -92,7 +90,6 @@ export function Confidentialite() {
         <ul>
           <li>Vercel (hébergement du site) ;</li>
           <li>Airtable — Formagrid Inc. (formulaires « Projet web » et « Automatisations & IA », et suivi des demandes) ;</li>
-          <li>Upstash (stockage des avis clients) ;</li>
           <li>Plaud (enregistrement et transcription des entretiens d’audit, uniquement avec votre accord) ;</li>
           <li>Google Fonts (affichage des polices du site).</li>
         </ul>
