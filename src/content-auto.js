@@ -1,4 +1,4 @@
-// Textes de la page Automatisations & IA
+// Textes de la page Automatisation IA
 
 export const AUTO_META = {
   title: 'Automatisations sur mesure pour indépendants et TPE | Agence Novara',

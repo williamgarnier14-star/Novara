@@ -80,7 +80,7 @@ const graphs = {
       areaServed: [{ '@type': 'AdministrativeArea', name: I.region }, { '@type': 'Country', name: 'France' }],
       hasOfferCatalog: {
         '@type': 'OfferCatalog',
-        name: 'Automatisations & IA',
+        name: 'Automatisation IA',
         itemListElement: [
           { '@type': 'Offer', name: 'Audit solo', price: audit, priceCurrency: 'EUR', description: 'Entretien individuel d’environ 1 h 30, rapport et tableau d’opportunités sous 15 jours, débriefing inclus.' },
           { '@type': 'Offer', name: 'Audit petite équipe ou TPE', description: 'Forfait sur devis selon le nombre de personnes et le périmètre.' },
@@ -90,7 +90,7 @@ const graphs = {
       },
     },
     faqPage(AUTO_FAQ),
-    breadcrumb('Automatisations & IA', `${SITE_URL}/automatisations`),
+    breadcrumb('Automatisation IA', `${SITE_URL}/automatisations`),
   ],
   apropos: [
     organization,
@@ -133,7 +133,7 @@ ${KEY_FACTS.map((f) => `- ${f.label} : ${f.value}`).join('\n')}
 ## Création de sites web — formules
 ${PLANS.map((p) => `- ${p.name} — ${p.price} : ${p.tagline}. Inclus : ${p.features.join(' ; ')}.`).join('\n')}
 
-## Automatisations & IA (${SITE_URL}/automatisations)
+## Automatisation IA (${SITE_URL}/automatisations)
 Automatisations sur mesure conçues à partir des habitudes de travail du client, en s'appuyant sur ses outils actuels quand ils conviennent. Le client garde ses comptes et ses accès administrateur.
 - Premier échange de 30 minutes offert et sans engagement, préparé grâce à un questionnaire.
 - Audit solo : ${audit} €${audit === 150 ? ' (tarif de lancement jusqu’au 31 mars 2027, puis 200 €)' : ''}, entretien d’environ 1 h 30, rapport et tableau d’opportunités sous 15 jours, débriefing inclus. Déduit d’une mise en place d’au moins 500 €.

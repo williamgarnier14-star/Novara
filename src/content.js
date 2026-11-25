@@ -27,8 +27,8 @@ export const IDENTITY = {
 }
 
 export const NAV = [
-  { label: 'Sites web', href: '/#services' },
-  { label: 'Automatisations & IA', href: '/automatisations' },
+  { label: 'Sites web', href: '/' },
+  { label: 'Automatisation IA', href: '/automatisations' },
   { label: 'Tarifs', href: '/#tarifs' },
   { label: 'À propos', href: '/a-propos' },
   { label: 'Contact', href: '/#contact' },
@@ -41,22 +41,6 @@ export const FOOTER_LINKS = [
   { label: 'Conditions générales de vente', href: '/cgv' },
 ]
 
-export const SERVICES = [
-  {
-    id: 'web',
-    title: 'Création de sites web',
-    text: 'Des sites sur mesure, rapides et optimisés pour Google, pensés pour transformer vos visiteurs en clients. Dès 490 €, livrés en 1 à 3 jours.',
-    cta: 'Voir les formules',
-    href: '/#tarifs',
-  },
-  {
-    id: 'auto',
-    title: 'Automatisations & IA',
-    text: 'Des automatisations sur mesure pour les indépendants et les petites entreprises. Nous partons de vos habitudes de travail pour simplifier les tâches qui vous prennent du temps.',
-    cta: 'Découvrir les automatisations',
-    href: '/automatisations',
-  },
-]
 
 export const PROFILES = [
   {

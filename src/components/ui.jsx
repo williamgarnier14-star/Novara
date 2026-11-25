@@ -174,7 +174,7 @@ export function Footer() {
             <a key={l.href} href={l.href} className="transition-colors duration-200 hover:text-white">{l.label}</a>
           ))}
         </nav>
-        <p className="text-[13px] text-slate-body">© 2026 {IDENTITY.brand} — Sites web et automatisations sur mesure</p>
+        <p className="text-[13px] text-slate-body">© 2026 {IDENTITY.brand}</p>
       </div>
     </footer>
   )

@@ -72,7 +72,7 @@ export function Confidentialite() {
       <S title="Données collectées">
         <ul>
           <li><strong>Formulaire « Projet web »</strong> (hébergé par Airtable) : prénom et nom, activité, e-mail, téléphone, formule envisagée, description du projet.</li>
-          <li><strong>Questionnaire « Automatisations & IA »</strong> (hébergé par Airtable) : prénom et nom, activité, e-mail, téléphone, entreprise, organisation (seul ou en équipe), taille de l’équipe et services concernés, description d’une tâche, outils utilisés.</li>
+          <li><strong>Questionnaire « Automatisation IA »</strong> (hébergé par Airtable) : prénom et nom, activité, e-mail, téléphone, entreprise, organisation (seul ou en équipe), taille de l’équipe et services concernés, description d’une tâche, outils utilisés.</li>
           <li><strong>Audit</strong> : notes d’entretien et, uniquement avec votre accord préalable, enregistrement audio de l’entretien.</li>
         </ul>
         <p>Pour chaque demande, nous enregistrons aussi le type de formulaire, la page d’origine et la date d’envoi.</p>
@@ -89,7 +89,7 @@ export function Confidentialite() {
         <p>Vos données sont destinées à {I.owner} pour {I.brand}. Elles ne sont jamais vendues. Elles peuvent être traitées par les prestataires techniques suivants :</p>
         <ul>
           <li>Vercel (hébergement du site) ;</li>
-          <li>Airtable — Formagrid Inc. (formulaires « Projet web » et « Automatisations & IA », et suivi des demandes) ;</li>
+          <li>Airtable — Formagrid Inc. (formulaires « Projet web » et « Automatisation IA », et suivi des demandes) ;</li>
           <li>Plaud (enregistrement et transcription des entretiens d’audit, uniquement avec votre accord) ;</li>
           <li>Google Fonts (affichage des polices du site).</li>
         </ul>

@@ -14,7 +14,7 @@
 - refonte de site internet
 - webdesigner freelance
 
-**Automatisations & IA** (page `/automatisations`)
+**Automatisation IA** (page `/automatisations`)
 - automatisation pour indépendant / TPE
 - automatiser ses devis, ses relances, ses comptes rendus
 - assistant IA pour artisan, agent immobilier, consultant

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { ArrowRight, ArrowUpRight, Bot, Check, ChevronDown, Globe, LifeBuoy, LoaderCircle, Palette, Play, Star, Wallet, X, Zap } from 'lucide-react'
-import { PROFILES, KEY_FACTS, WHY, STEPS, PLANS, FAQ, SERVICES, FORM_WEB, EXTERNAL } from '../content.js'
+import { PROFILES, KEY_FACTS, WHY, STEPS, PLANS, FAQ, FORM_WEB, EXTERNAL } from '../content.js'
 import { Shell, SectionHead, Stars, inputCls } from '../components/ui.jsx'
 import PresentationVideo from '../components/PresentationVideo.jsx'
 
@@ -38,7 +38,7 @@ function Hero() {
         </div>
         <PresentationVideo className="fade-up fade-up-4 mt-10" src="/presentation.mp4" poster="/presentation-poster.jpg" duration="0:45" label="Voir ma présentation" />
         <a
-          href="#services"
+          href="#pour-qui"
           aria-label="Découvrir"
           className="fade-up fade-up-4 mt-10 inline-flex flex-col items-center gap-2 text-[13px] font-medium text-slate-body transition-colors duration-200 hover:text-white"
         >
@@ -47,35 +47,6 @@ function Hero() {
             <ChevronDown size={16} />
           </span>
         </a>
-      </div>
-    </section>
-  )
-}
-
-function Services() {
-  const icons = { web: Globe, auto: Bot }
-  return (
-    <section id="services" className="mx-auto max-w-[1080px] scroll-mt-24 px-6 pt-24 md:pt-32">
-      <SectionHead eyebrow="Nos services" title="Deux façons de vous faire gagner du temps et des clients" className="mx-auto max-w-2xl" />
-      <div className="mt-14 grid gap-6 md:grid-cols-2">
-        {SERVICES.map((s, i) => {
-          const Icon = icons[s.id]
-          return (
-            <article key={s.id} className={`fade-up fade-up-${i + 1} flex flex-col rounded-2xl border border-white/10 bg-white/[0.04] p-8 backdrop-blur-sm`}>
-              <div className="flex h-11 w-11 items-center justify-center rounded-full bg-blue-glow/15 text-blue-soft">
-                <Icon size={20} />
-              </div>
-              <h3 className="mt-5 text-xl font-bold text-white">{s.title}</h3>
-              <p className="mt-3 flex-1 text-[15px] leading-relaxed text-slate-body">{s.text}</p>
-              <a
-                href={s.href}
-                className="mt-7 inline-flex items-center gap-2 self-start rounded-xl border-2 border-white/15 px-5 py-2.5 text-sm font-semibold text-white transition-all duration-200 hover:border-white/30 hover:bg-white/[0.03]"
-              >
-                {s.cta} <ArrowRight size={15} />
-              </a>
-            </article>
-          )
-        })}
       </div>
     </section>
   )
@@ -97,10 +68,6 @@ function Contact() {
         >
           Démarrer mon projet <ArrowUpRight size={17} />
         </a>
-        <p className="mt-8 border-t border-white/10 pt-6 text-[14px] text-slate-body">
-          Vous souhaitez plutôt automatiser des tâches ?{' '}
-          <a href="/automatisations" className="font-semibold text-blue-soft hover:text-white">Découvrir les automatisations</a>
-        </p>
       </div>
     </section>
   )
@@ -108,7 +75,7 @@ function Contact() {
 
 function ForWho() {
   return (
-    <section className="mx-auto max-w-[1080px] px-6 py-24 md:py-32">
+    <section id="pour-qui" className="mx-auto max-w-[1080px] scroll-mt-24 px-6 py-24 md:py-32">
       <SectionHead eyebrow="Pour qui" title="Deux profils, une seule exigence : un site qui travaille pour vous." className="mx-auto max-w-lg" />
       <div className="mt-14 grid gap-6 md:grid-cols-2">
         {PROFILES.map((p, i) => (
@@ -269,7 +236,6 @@ export default function Home() {
   return (
     <Shell current="/">
       <Hero />
-      <Services />
       <ForWho />
       <KeyFacts />
       <Why />
