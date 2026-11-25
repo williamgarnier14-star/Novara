@@ -69,21 +69,17 @@ export function ScrollProgress() {
   )
 }
 
-export function Logo({ className = 'text-lg' }) {
+export function Logo({ className = 'text-lg', size = 46 }) {
   return (
     <span className={`inline-flex items-center gap-3.5 ${className}`}>
-      <svg width="22" height="22" viewBox="0 0 24 24" className="flex-none" style={{ filter: 'drop-shadow(0 0 6px rgba(59,108,224,0.75))' }} aria-hidden="true">
-        <defs>
-          <linearGradient id="novara-mark" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse">
-            <stop offset="0%" stopColor="#7C9CF0" />
-            <stop offset="100%" stopColor="#3B6CE0" />
-          </linearGradient>
-        </defs>
-        <g fill="none" stroke="url(#novara-mark)" strokeWidth="1.05">
-          <path d="M2.5 2V22M4.4 2V22M6.3 2V22M17.7 2V22M19.6 2V22M21.5 2V22" />
-          <path d="M6.3 2.3L17.7 16.8M6.3 4.9L17.7 19.4M6.3 7.5L17.7 22" />
-        </g>
-      </svg>
+      <img
+        src="/logo-novara.png"
+        alt=""
+        width={size}
+        height={size}
+        className="flex-none rounded-full"
+        style={{ width: size, height: size, boxShadow: '0 0 18px rgba(59,108,224,0.35)' }}
+      />
       <span className="font-display font-semibold tracking-[0.04em] text-white">
         <span className="whitespace-nowrap">AGENCE NOVARA</span>
       </span>
@@ -172,7 +168,7 @@ export function Footer() {
   return (
     <footer className="border-t border-white/[0.06] px-6 py-10">
       <div className="mx-auto flex max-w-[1180px] flex-col items-center justify-between gap-5 md:flex-row">
-        <Logo className="text-sm" />
+        <Logo className="text-sm" size={36} />
         <nav className="flex flex-wrap justify-center gap-x-5 gap-y-2 text-[13px] text-slate-body" aria-label="Liens utiles">
           {FOOTER_LINKS.map((l) => (
             <a key={l.href} href={l.href} className="transition-colors duration-200 hover:text-white">{l.label}</a>
